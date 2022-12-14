@@ -47,7 +47,15 @@ namespace CircularQueues_CSharp
         {
             /*check whether the queue is empty. */
             if  (FRONT == -1)
-            { }
+            {
+                Console.WriteLine("Queue underflof\n");
+                return;
+            }
+            Console.WriteLine("\nThe element deleted from the queue is: " + queue_array[FRONT] + "\n");
+            /* Check if the queue has one element. */
+            if (FRONT == REAR)
+            { 
+            }
         }
 
     }
