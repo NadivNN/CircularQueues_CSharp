@@ -76,7 +76,88 @@ namespace CircularQueues_CSharp
             /*check if the queue is empty. */
             if (FRONT == -1)
             {
-
+                Console.WriteLine("Queue is empty\n");
+                return ;
+            }
+            Console.WriteLine("\nElement in the queue are..............\n");
+            if (FRONT_position <= REAR_position)
+            {
+                /*travers the queue till the last element present in an array.*/
+                while (FRONT_position <= REAR_position)
+                {
+                    Console.Write(queue_array[FRONT_position] + "  ");
+                    FRONT_position++;
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                /* traverses the queue till the last position of the array. */
+                while (FRONT_position <= max - 1)
+                {
+                    Console.Write(queue_array[FRONT_position] + "  ");
+                    FRONT_position++;
+                }
+                /* set the FRONT position to the first element of the array*/
+                FRONT_position = 0;
+                /* traverse the array till the last element present in the queue. */
+                while (FRONT_position <= REAR_position)
+                {
+                    Console.Write(queue_array[FRONT_position] + "  ");
+                    FRONT_position++;
+                }
+                Console.WriteLine() ;
+            }
+        }
+        static void Main(string[] args)
+        {
+            Queues q = new Queues();
+            char ch;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Menu");
+                    Console.WriteLine("1. Implement insert operation");
+                    Console.WriteLine("2. Implement delete operation");
+                    Console.WriteLine("3. Display Values");
+                    Console.WriteLine("4. Exit");
+                    Console.Write("\nEnter your choice (1-4): ");
+                    ch = Convert.ToChar(Console.ReadLine());
+                    Console.WriteLine();
+                    switch (ch)
+                    {
+                        case '1':
+                            {
+                                Console.Write("Enter a number: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                q.insert(num); 
+                            }
+                            break;
+                        case '2':
+                            {
+                                q.remove();
+                            }
+                            break ;
+                        case '3':
+                            {
+                                q.display();
+                            }
+                            break;
+                        case '4':
+                            return ;
+                        default:
+                            {
+                                Console.WriteLine("Invalid option!!");
+                            }
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Check for the values entered.");
+                }
             }
         }
 
