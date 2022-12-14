@@ -44,7 +44,11 @@ namespace CircularQueues_CSharp
             queue_array[REAR] = element;
         }
         public void remove()
-        { }
+        {
+            /*check whether the queue is empty. */
+            if  (FRONT == -1)
+            { }
+        }
 
     }
 }
